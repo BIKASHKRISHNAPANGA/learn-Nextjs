@@ -64,4 +64,4 @@ const UserSchema:Schema<User>=new Schema({
     Message:[MessageSchema]
 })
 // Exporting works differently in Next.js because it does not track how many times a module has been exported. It could be the first time or multiple times. In contrast, Express knows when an export has already been written. In Next.js, every time a page reloads, it reloads the module again, leading to potential re-execution of exports.this why de need to check here
-const UserModel=(mongoose.models.User as mongoose.Model<User>)||(mongoose.model<User>("User",UserSchema))
+ export const UserModel=(mongoose.models.User as mongoose.Model<User>)||(mongoose.model<User>("User",UserSchema))
